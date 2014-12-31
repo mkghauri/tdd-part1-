@@ -9,8 +9,8 @@ public class ItemTest {
 	@Test
 	public void test() {
 		InventoryItem item=new InventoryItem();
-		item.addItem();
-		assertEquals(10, item.currentStock);
+		item.addItem(5);
+		assertEquals(15, item.currentStock);
 	}
 
 }
