@@ -3,9 +3,15 @@ package org.test.inventory;
 public class InventoryItem {
 
 	int currentStock=10;
+	int price=5;
 	
-	public void addItem(int quantity) {
-		currentStock +=quantity;
+	public InventoryItem(int currentStock){
+		this.currentStock = currentStock;
+	}
+	
+	public InventoryItem addItem(int quantity) {
+		return new InventoryItem(currentStock +=quantity);
+		
 	}
 
 }
