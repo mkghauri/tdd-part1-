@@ -9,7 +9,7 @@ public class Dollar extends Money{
 		this.amount= amount;
 	}
 	
-	Dollar times(int multiplier) {
+	Money times(int multiplier) {
 		//amount= amount * 2;
 		//amount = amount * multiplier;
 		//reduce duplication
@@ -19,6 +19,8 @@ public class Dollar extends Money{
 		return new Dollar(amount * multiplier);
 	}
 	
+	
+
 	
 
 }

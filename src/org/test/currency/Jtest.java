@@ -18,20 +18,23 @@ public class Jtest {
 
 	@Test
 	public void testMultiplication() {
-			Dollar five= new Dollar(5);
-			//five.times(2);
+			Money five=  Money.dollar(5);
+			assertEquals(Money.dollar(10), five.times(2));
+			assertEquals(Money.dollar(15), five.times(3));
+
+			/*five.times(2);
 			Dollar product=five.times(2);
 			assertEquals(10, product.amount);
 			//five.times(3);
 			product=five.times(3);
 			//assertEquals(15,five.amount);
-			assertEquals(15,product.amount);
+			assertEquals(15,product.amount);*/
 
 	}
 	@Test
 	public void testEquality() {
-		assertTrue(new Dollar(5).equals(new Dollar(5)));
-		assertFalse(new Dollar(5).equals(new Dollar(6)));
+		assertTrue(Money.dollar(5).equals(Money.dollar(5)));
+		assertFalse(Money.dollar(5).equals(Money.dollar(6)));
 		assertTrue(new Franc(5).equals(new Franc(5)));
 		assertFalse(new Franc(5).equals(new Franc(6)));
 		
