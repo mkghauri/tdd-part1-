@@ -20,6 +20,11 @@ public class ItemTest {
 		assertEquals(12, appleA.currentStock);
 		appleB.addItem(3);
 		assertEquals(15, appleB.currentStock);
-		}
+	}
+	
+	@Test
+	public void testEquality() {
+		assertTrue(new InventoryItem(5).equals(new InventoryItem(5)));
+	}
 
 }

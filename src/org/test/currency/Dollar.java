@@ -1,8 +1,8 @@
 package org.test.currency;
 
-public class Dollar {
+public class Dollar extends Money{
 	
-	int amount=10;
+	//int amount=10;
 	//private int amount=10; //not done in Chapter 2 
 
 	public Dollar(int amount){
@@ -19,10 +19,6 @@ public class Dollar {
 		return new Dollar(amount * multiplier);
 	}
 	
-	public boolean equals(Object object) {
-		Dollar dollar= (Dollar) object;
-		return amount == dollar.amount;
-	}
-
+	
 
 }

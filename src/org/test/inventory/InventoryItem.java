@@ -13,5 +13,10 @@ public class InventoryItem {
 		return new InventoryItem(currentStock +=quantity);
 		
 	}
+	
+	public boolean equals(Object object) {
+		InventoryItem ii=(InventoryItem) object;
+		return this.price * this.currentStock == ii.price * ii.currentStock;
+	}
 
 }
