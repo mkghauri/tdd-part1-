@@ -7,7 +7,7 @@ public class Dollar extends Money{
 	
 	//private String currency;
 
-	public Dollar(int amount,String currency){
+	Dollar(int amount,String currency){
 		super(amount,currency);
 	}
 	
@@ -26,8 +26,5 @@ public class Dollar extends Money{
 	String currency(){
 		return currency;
 	}*/
-	
-
-	
 
 }

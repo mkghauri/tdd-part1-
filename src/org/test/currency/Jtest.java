@@ -40,16 +40,17 @@ public class Jtest {
 		
 
 	}
-	@Test
+	
+	/*@Test
 	public void testDifferentClassEquality() {
 		assertTrue(new Money(10, "CHF").equals(new Franc(10, "CHF")));
-	}
+	}*/
 	
 	@Test
 	public void testFrancMultiplication() {
-		Franc five= new Franc(5,"CHF");
-		assertEquals(new Franc(10,"CHF"), five.times(2));
-		assertEquals(new Franc(15,"CHF"), five.times(3));
+		Money five= new Money(5,"CHF");
+		assertEquals(new Money(10,"CHF"), five.times(2));
+		assertEquals(new Money(15,"CHF"), five.times(3));
 	}
 	
 	@Test
@@ -57,6 +58,17 @@ public class Jtest {
 		assertEquals("USD", Money.dollar(1).currency());
 		assertEquals("CHF",Money.franc(1).currency());
 		
+	}
+	@Test
+	public void testSimpleAddition() {
+		//Money sum= Money.dollar(5).plus(Money.dollar(5));
+		//assertEquals(Money.dollar(10), sum);
+		
+		Money five= Money.dollar(5);
+		Expression sum= five.plus(five);
+		Bank bank= new Bank();
+		Money reduced= bank.reduce(sum, "USD");
+		assertEquals(Money.dollar(10), reduced);
 	}
 
 }

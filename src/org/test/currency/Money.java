@@ -1,6 +1,6 @@
 package org.test.currency;
 
-class Money {
+class Money implements Expression {
 	protected int amount;
 	protected String currency;
 	//abstract Money times(int multiplier);
@@ -21,12 +21,12 @@ class Money {
 		//return null;
 	}
 	
-	static Dollar dollar(int amount) {
-		return new Dollar(amount,"USD");
+	static Money dollar(int amount) {
+		return new Money(amount,"USD");
 	}
 
 	static Money franc(int amount) {
-		return new Franc(amount,"CHF");
+		return new Money(amount,"CHF");
 	}
 	
 	String currency(){
@@ -35,6 +35,10 @@ class Money {
 	
 	public String toString() {
 		return amount + " " + currency;
+	}
+	
+	public Expression plus(Money added){
+		return new Money(amount+added.amount,currency);
 	}
 	
 }
